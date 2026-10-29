@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Vehicle | TripWheels</title>
+
+    <link rel="stylesheet" href="edit-vehicle.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Edit Vehicle</h1>
+                <p>Update your vehicle information</p>
+            </div>
+
+            <button
+                class="back-btn"
+                onclick="goBack()">
+                ← Back to My Vehicles
+            </button>
+
+        </header>
+
+
+        <!-- FORM CONTAINER -->
+        <main class="form-container">
+
+            <form id="editVehicleForm">
+
+                <!-- VEHICLE TYPE -->
+                <div class="form-section">
+
+                    <h2>Vehicle Information</h2>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="vehicleType">
+                                Vehicle Type
+                            </label>
+
+                            <select
+                                id="vehicleType"
+                                required>
+
+                                <option value="">
+                                    Select Vehicle Type
+                                </option>
+
+                                <option value="Bike">
+                                    Bike
+                                </option>
+
+                                <option value="Car">
+                                    Car
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- BRAND -->
+                        <div class="form-group">
+
+                            <label for="brand">
+                                Brand
+                            </label>
+
+                            <input
+                                type="text"
+                                id="brand"
+                                placeholder="e.g. Honda"
+                                required>
+
+                        </div>
+
+
+                        <!-- MODEL -->
+                        <div class="form-group">
+
+                            <label for="model">
+                                Model
+                            </label>
+
+                            <input
+                                type="text"
+                                id="model"
+                                placeholder="e.g. Activa 6G"
+                                required>
+
+                        </div>
+
+
+                        <!-- REGISTRATION -->
+                        <div class="form-group">
+
+                            <label for="registration">
+                                Registration Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="registration"
+                                placeholder="e.g. MH27AB1234"
+                                required>
+
+                        </div>
+
+
+                        <!-- YEAR -->
+                        <div class="form-group">
+
+                            <label for="vehicleYear">
+                                Manufacturing Year
+                            </label>
+
+                            <input
+                                type="number"
+                                id="vehicleYear"
+                                min="1990"
+                                max="2030"
+                                placeholder="e.g. 2024"
+                                required>
+
+                        </div>
+
+
+                        <!-- PRICE -->
+                        <div class="form-group">
+
+                            <label for="price">
+                                Price Per Day (₹)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="price"
+                                min="1"
+                                placeholder="e.g. 800"
+                                required>
+
+                        </div>
+
+
+                        <!-- LOCATION -->
+                        <div class="form-group">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="e.g. Amravati"
+                                required>
+
+                        </div>
+
+
+                        <!-- FUEL -->
+                        <div class="form-group">
+
+                            <label for="fuelType">
+                                Fuel Type
+                            </label>
+
+                            <select
+                                id="fuelType"
+                                required>
+
+                                <option value="">
+                                    Select Fuel Type
+                                </option>
+
+                                <option value="Petrol">
+                                    Petrol
+                                </option>
+
+                                <option value="Diesel">
+                                    Diesel
+                                </option>
+
+                                <option value="Electric">
+                                    Electric
+                                </option>
+
+                                <option value="CNG">
+                                    CNG
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AVAILABILITY -->
+                        <div class="form-group">
+
+                            <label for="availability">
+                                Availability
+                            </label>
+
+                            <select
+                                id="availability"
+                                required>
+
+                                <option value="Available">
+                                    Available
+                                </option>
+
+                                <option value="Unavailable">
+                                    Unavailable
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE -->
+                <div class="form-section">
+
+                    <h2>Vehicle Image</h2>
+
+                    <p class="image-note">
+                        You can optionally select a new image.
+                    </p>
+
+                    <div class="image-box">
+
+                        <input
+                            type="file"
+                            id="vehicleImage"
+                            accept="image/*">
+
+                        <p id="currentImage">
+                            Current image: No image selected
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="goBack()">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <script src="edit-vehicle.js"></script>
+
+</body>
+
+</html>

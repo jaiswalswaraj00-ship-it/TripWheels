@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback | TripWheels</title>
+
+    <link
+        rel="stylesheet"
+        href="feedback.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="feedback-page">
+
+
+        <!-- HEADER -->
+
+        <header class="feedback-header">
+
+            <div>
+
+                <h1>
+                    Share Your Experience
+                </h1>
+
+                <p>
+                    Your feedback helps us make TripWheels better.
+                </p>
+
+            </div>
+
+
+            <a
+                href="user-dashboard.html"
+                class="back-btn">
+
+                ← Back to Dashboard
+
+            </a>
+
+        </header>
+
+
+
+        <!-- MAIN -->
+
+        <main class="feedback-container">
+
+
+            <div class="feedback-card">
+
+
+                <div class="feedback-icon">
+                    💬
+                </div>
+
+
+                <h2>
+                    How was your experience?
+                </h2>
+
+
+                <p class="subtitle">
+
+                    Tell us about your TripWheels experience.
+
+                </p>
+
+
+
+                <!-- RATING -->
+
+                <div class="form-group">
+
+                    <label>
+                        Rate your experience
+                    </label>
+
+
+                    <div
+                        class="rating"
+                        id="rating">
+
+                        <span data-rating="1">★</span>
+                        <span data-rating="2">★</span>
+                        <span data-rating="3">★</span>
+                        <span data-rating="4">★</span>
+                        <span data-rating="5">★</span>
+
+                    </div>
+
+
+                    <p
+                        id="ratingText"
+                        class="rating-text">
+
+                        Select a rating
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="feedbackName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="feedbackName"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+
+
+                <!-- EXPERIENCE -->
+
+                <div class="form-group">
+
+                    <label for="feedbackMessage">
+                        Your Experience
+                    </label>
+
+
+                    <textarea
+                        id="feedbackMessage"
+                        rows="6"
+                        maxlength="500"
+                        placeholder="Tell us about your experience with TripWheels..."
+                        required></textarea>
+
+
+                    <div class="character-count">
+
+                        <span id="characterCount">
+                            0
+                        </span>
+                        / 500
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="button"
+                    id="submitFeedback"
+                    class="submit-btn">
+
+                    Submit Feedback
+
+                </button>
+
+
+                <p
+                    id="feedbackMessageStatus"
+                    class="status-message">
+                </p>
+
+
+            </div>
+
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                © 2026 TripWheels. Ride • Explore • Repeat.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="feedback.js"></script>
+
+</body>
+
+</html>

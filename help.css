@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #F7F8FC;
+    color: #172033;
+}
+
+.help-page {
+    min-height: 100vh;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.help-header {
+    background: linear-gradient(
+        135deg,
+        #080A12,
+        #2C3480
+    );
+
+    color: white;
+    padding: 30px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 2px solid #E91E63;
+}
+
+.help-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.help-header p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.back-btn {
+    text-decoration: none;
+    color: white;
+
+    border: 1px solid #E91E63;
+
+    padding: 11px 18px;
+    border-radius: 8px;
+
+    transition: 0.25s;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.back-btn:hover {
+    background: #E91E63;
+    border-color: #E91E63;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.30);
+
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.quick-help,
+.important-section,
+.faq-section {
+    width: 86%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2,
+.important-section > h2,
+.faq-section > h2 {
+    font-size: 24px;
+    margin-bottom: 7px;
+    color: #111111;
+}
+
+.section-title p {
+    color: #667085;
+}
+
+/* ==========================================
+   HELP CARDS
+========================================== */
+
+.help-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.help-card {
+    background: #FFFFFF;
+
+    padding: 24px;
+    border-radius: 14px;
+
+    display: flex;
+    gap: 18px;
+
+    border: 1px solid #E1E3EB;
+
+    box-shadow:
+        0 5px 18px rgba(44, 52, 128, 0.08);
+
+    transition: 0.25s;
+}
+
+.help-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #E91E63;
+
+    box-shadow:
+        0 10px 25px rgba(44, 52, 128, 0.12),
+        0 8px 25px rgba(233, 30, 99, 0.10);
+}
+
+.help-icon {
+    min-width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480
+        );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    border: 1px solid #E91E63;
+
+    box-shadow:
+        0 5px 15px rgba(233, 30, 99, 0.15);
+}
+
+.help-card h3 {
+    margin-bottom: 8px;
+    color: #111111;
+}
+
+.help-card p {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.help-card a {
+    color: #E91E63;
+    font-weight: 700;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.help-card a:hover {
+    color: #2C3480;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   IMPORTANT INFORMATION
+========================================== */
+
+.important-section {
+    background: #FFFFFF;
+
+    padding: 28px;
+    border-radius: 15px;
+
+    border: 1px solid #E1E3EB;
+
+    box-shadow:
+        0 5px 20px rgba(44, 52, 128, 0.06);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.info-card {
+    display: flex;
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #F7F8FC;
+
+    border-radius: 10px;
+
+    border: 1px solid #E1E3EB;
+
+    transition: 0.2s;
+}
+
+.info-card:hover {
+    border-color: #E91E63;
+
+    background: #FFF7FA;
+}
+
+.info-card > span {
+    font-size: 25px;
+}
+
+.info-card h3 {
+    margin-bottom: 6px;
+    color: #111111;
+}
+
+.info-card p {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-section details {
+    background: #FFFFFF;
+
+    margin-top: 12px;
+    padding: 18px 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #E1E3EB;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.faq-section details:hover {
+    border-color: #E91E63;
+
+    box-shadow:
+        0 5px 18px rgba(233, 30, 99, 0.08);
+}
+
+.faq-section summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: #111111;
+}
+
+.faq-section details p {
+    color: #667085;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+
+.safety-box {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+    padding: 22px;
+
+    background: #FFF7FA;
+
+    border: 1px solid #E91E63;
+
+    border-radius: 12px;
+
+    display: flex;
+    gap: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(233, 30, 99, 0.08);
+}
+
+.safety-icon {
+    font-size: 28px;
+}
+
+.safety-box h2 {
+    margin-bottom: 6px;
+    color: #111111;
+}
+
+.safety-box p {
+    color: #667085;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480
+        );
+
+    color: white;
+
+    padding: 22px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 40px;
+
+    border-top: 2px solid #E91E63;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #E91E63;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+
+    .help-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .quick-help,
+    .important-section,
+    .faq-section,
+    .safety-box {
+        width: 92%;
+    }
+
+    .help-header {
+        padding: 25px 4%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

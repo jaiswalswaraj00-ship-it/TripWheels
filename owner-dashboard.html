@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard | TripWheels</title>
+
+    <link rel="stylesheet" href="owner-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>Trip</span>Wheels
+            </div>
+
+            <nav>
+                <a href="#" class="nav-link active">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+
+                <a href="my-vehicles.html" class="nav-link">
+                     <span>🚗</span>
+                     My Vehicles
+                </a>
+
+                <a href="#" class="nav-link" onclick="addVehicle()">
+                    <span>➕</span>
+                    Add Vehicle
+                </a> 
+
+                <a href="#" class="nav-link" onclick="openBookings()">
+                    <span>📅</span>
+                    Bookings
+                </a>
+
+                <a href="#" class="nav-link" onclick="openEarnings()">
+                    <span>💰</span>
+                    Earnings
+                </a>
+
+                <!-- =================================
+     SUPPORT
+================================= -->
+
+<div class="support-section">
+
+    <p class="support-title">
+       
+    </p>
+
+
+    <a
+        href="help.html"
+        class="nav-link support-link">
+
+        <span class="nav-icon">
+            ❓
+        </span>
+
+        <span>
+            Help & Support
+        </span>
+
+        <span class="nav-arrow">
+            ›
+        </span>
+
+    </a>
+
+
+    <a
+        href="feedback.html"
+        class="nav-link support-link">
+
+        <span class="nav-icon">
+            💬
+        </span>
+
+        <span>
+            Feedback
+        </span>
+
+        <span class="nav-arrow">
+            ›
+        </span>
+
+    </a>
+
+</div>
+
+                <a href="profile.html" class="nav-link">
+                    <span>👤</span>
+                    Profile
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-link" onclick="logout()">
+                    <span>🚪</span>
+                    Logout
+                </a>
+            </div>
+
+            
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Owner Dashboard</h1>
+                    <p>Manage your vehicles and bookings</p>
+                </div>
+
+                <div class="owner-box">
+                    <div class="owner-avatar">O</div>
+
+                    <div>
+                        <strong>Owner</strong>
+                        <small>Vehicle Partner</small>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD CARDS -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">🚙</div>
+
+                    <div>
+                        <p>Total Vehicles</p>
+                        <h2 id="totalVehicles">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">🗓️</div>
+
+                    <div>
+                        <p>Total Bookings</p>
+                        <h2 id="totalBookings">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">💵</div>
+
+                    <div>
+                        <p>Total Earnings</p>
+                        <h2 id="totalEarnings">₹0</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔷</div>
+
+                    <div>
+                        <p>Active Vehicles</p>
+                        <h2 id="activeVehicles">0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- VEHICLES -->
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div onclick="window.location.href='my-vehicles.html'" style="cursor: pointer;">
+                     <h2>My Vehicles</h2>
+                     <p>Your listed vehicles</p>
+                    </div>
+
+                   <a
+    href="add-vehicle.html"
+    class="primary-btn">
+    + Add Vehicle
+</a>
+
+                </div>
+
+
+                <div id="vehicleList" class="vehicle-list">
+
+                    <!-- VEHICLES WILL APPEAR HERE -->
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">🚗</div>
+
+                        <h3>No vehicles added yet</h3>
+
+                        <p>
+                            Add your first vehicle to start
+                            accepting bookings.
+                        </p>
+
+                        <button
+                            class="primary-btn"
+                            onclick="addVehicle()">
+                            Add Vehicle
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT BOOKINGS -->
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Recent Bookings</h2>
+                        <p>Latest customer bookings</p>
+                    </div>
+
+                    <button
+                        class="text-btn"
+                        onclick="openBookings()">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="booking-box">
+
+                    <div class="booking-header">
+                        <span>Customer</span>
+                        <span>Vehicle</span>
+                        <span>Date</span>
+                        <span>Status</span>
+                    </div>
+
+
+                    <div class="no-bookings">
+                        <span>📅</span>
+
+                        <p>No bookings yet</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="owner-dashboard.js"></script>
+
+</body>
+</html>

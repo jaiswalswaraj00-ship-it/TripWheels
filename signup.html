@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripWheels | Create Account</title>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<div class="signup-page">
+
+    <!-- ================= LEFT SIDE ================= -->
+    <div class="signup-left">
+
+        <div class="overlay"></div>
+
+        <div class="brand">
+            <div class="logo-box">TW</div>
+
+            <div>
+                <h1>TripWheels</h1>
+                <p>Self-drive rentals</p>
+            </div>
+        </div>
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                RIDE • EXPLORE • REPEAT
+            </div>
+
+            <h2>
+                Your journey<br>
+                starts here.
+            </h2>
+
+            <p>
+                Rent bikes, scooters and cars easily with TripWheels.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature-card">
+                <span>🚗</span>
+                <p>Cars</p>
+            </div>
+
+            <div class="feature-card">
+                <span>🏍️</span>
+                <p>Bikes</p>
+            </div>
+
+            <div class="feature-card">
+                <span>🗓️</span>
+                <p>Easy Booking</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= RIGHT SIDE ================= -->
+    <div class="signup-right">
+
+        <div class="signup-box">
+
+            <div class="welcome">
+                Create Account
+            </div>
+
+            <h2>
+                Join TripWheels
+            </h2>
+
+            <p class="subtitle">
+                Create your account and start your journey
+            </p>
+
+
+            <!-- ACCOUNT TYPE -->
+
+            <label class="section-label">
+                Continue as
+            </label>
+
+            <div class="roles">
+
+                <button
+                    type="button"
+                    id="userRole"
+                    class="role-card active"
+                    onclick="selectRole('user')"
+                >
+
+                    <div class="role-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <strong>User</strong>
+                        <small>Rent a vehicle</small>
+                    </div>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="ownerRole"
+                    class="role-card"
+                    onclick="selectRole('owner')"
+                >
+
+                    <div class="role-icon">
+                        🚘
+                    </div>
+
+                    <div>
+                        <strong>Owner</strong>
+                        <small>List your vehicle</small>
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form onsubmit="createAccount(event)">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+
+                <label>Phone Number</label>
+
+                <div class="phone-input">
+
+                    <span>+91</span>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter 10-digit phone number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create your password"
+                    required
+                >
+
+
+                <label>Confirm Password</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="create-btn"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <div class="or-line">
+                <span></span>
+                OR
+                <span></span>
+            </div>
+
+
+            <p class="login-link">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="signup.js"></script>
+
+</body>
+</html>

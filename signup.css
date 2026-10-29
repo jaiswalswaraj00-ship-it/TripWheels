@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #F5F6FB;
+}
+
+/* ================= MAIN ================= */
+
+.signup-page {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.signup-left {
+    width: 58%;
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image: url("images/tripwheel-banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    overflow: hidden;
+}
+
+/* DARK / BLUE OVERLAY */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.96),
+            rgba(5, 6, 18, 0.94),
+            rgba(16, 18, 48, 0.90)
+        );
+}
+
+/* ================= BRAND ================= */
+
+.brand {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 55px 60px 0;
+}
+
+.logo-box {
+    width: 78px;
+    height: 78px;
+
+    background: #050505;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    border: 2px solid #FF0F68;
+
+    box-shadow:
+        0 0 18px rgba(255, 15, 104, 0.45);
+}
+
+.brand h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+
+    color: #FFFFFF;
+}
+
+.brand p {
+    font-size: 17px;
+
+    color: #FFFFFF;
+
+    opacity: 0.9;
+}
+
+/* ================= HERO ================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    margin-left: 60px;
+    margin-top: 105px;
+}
+
+.small-title {
+    font-size: 17px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    margin-bottom: 30px;
+
+    color: #FF0F68;
+}
+
+.hero-content h2 {
+    font-size: 66px;
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+
+    color: #FFFFFF;
+}
+
+.hero-content p {
+    font-size: 21px;
+
+    max-width: 550px;
+
+    line-height: 1.5;
+
+    color: #FFFFFF;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 50px;
+    left: 60px;
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.feature-card {
+    width: 170px;
+    height: 130px;
+
+    border: 1px solid #FF0F68;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 0 22px rgba(255, 15, 104, 0.10);
+}
+
+.feature-card span {
+    font-size: 30px;
+}
+
+.feature-card p {
+    font-size: 16px;
+
+    color: #FFFFFF;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.signup-right {
+    width: 42%;
+
+    min-height: 100vh;
+
+    background: #F5F6FB;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+/* ================= SIGNUP BOX ================= */
+
+.signup-box {
+    width: 100%;
+    max-width: 535px;
+
+    background: #FFFFFF;
+
+    padding: 38px 48px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(15, 18, 45, 0.10);
+}
+
+/* ================= HEADINGS ================= */
+
+.welcome {
+    color: #FF0F68;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.signup-box h2 {
+    color: #050505;
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #68738A;
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+}
+
+/* ================= LABEL ================= */
+
+label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 8px;
+
+    color: #111111;
+
+    font-weight: 600;
+
+    font-size: 15px;
+}
+
+.section-label {
+    margin-top: 0;
+}
+
+/* ================= ROLE ================= */
+
+.roles {
+    display: flex;
+
+    gap: 14px;
+
+    margin-bottom: 10px;
+}
+
+.role-card {
+    flex: 1;
+
+    height: 82px;
+
+    border: 1px solid #D8DCE7;
+
+    background: #FFFFFF;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    text-align: left;
+
+    transition: 0.2s;
+}
+
+.role-card:hover {
+    border-color: #FF0F68;
+
+    box-shadow:
+        0 7px 18px rgba(255, 15, 104, 0.12);
+}
+
+.role-card.active {
+    border: 2px solid #FF0F68;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17152B,
+            #252957
+        );
+
+    box-shadow:
+        0 8px 22px rgba(255, 15, 104, 0.18);
+}
+
+.role-icon {
+    width: 45px;
+    height: 45px;
+
+    background: #FF0F68;
+
+    color: #FFFFFF;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 15px rgba(255, 15, 104, 0.25);
+}
+
+.role-card strong {
+    display: block;
+
+    color: #111111;
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+.role-card small {
+    color: #7B8495;
+
+    font-size: 12px;
+}
+
+/* ACTIVE ROLE TEXT */
+
+.role-card.active strong {
+    color: #FFFFFF;
+}
+
+.role-card.active small {
+    color: #D5D8E5;
+}
+
+/* ================= INPUT ================= */
+
+input {
+    width: 100%;
+
+    height: 53px;
+
+    border: 1px solid #D8DCE7;
+
+    border-radius: 11px;
+
+    padding: 0 15px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: #111111;
+
+    background: #FFFFFF;
+
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #FF0F68;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 15, 104, 0.08);
+}
+
+/* ================= PHONE ================= */
+
+.phone-input {
+    height: 53px;
+
+    border: 1px solid #D8DCE7;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.phone-input:focus-within {
+    border-color: #FF0F68;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 15, 104, 0.08);
+}
+
+.phone-input span {
+    padding-left: 16px;
+
+    padding-right: 12px;
+
+    font-weight: bold;
+
+    color: #111111;
+}
+
+.phone-input input {
+    border: none;
+
+    height: 100%;
+
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+.phone-input input:focus {
+    box-shadow: none;
+}
+
+/* ================= CREATE BUTTON ================= */
+
+.create-btn {
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #21152C,
+            #FF0F68
+        );
+
+    color: #FFFFFF;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 10px 25px rgba(255, 15, 104, 0.20);
+}
+
+.create-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 28px rgba(255, 15, 104, 0.32);
+}
+
+/* ================= OR ================= */
+
+.or-line {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    color: #8A91A3;
+
+    font-size: 13px;
+}
+
+.or-line span {
+    height: 1px;
+
+    flex: 1;
+
+    background: #E1E3EA;
+}
+
+/* ================= LOGIN ================= */
+
+.login-link {
+    text-align: center;
+
+    color: #777F91;
+
+    font-size: 15px;
+}
+
+.login-link a {
+    color: #FF0F68;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .signup-left {
+        width: 50%;
+    }
+
+    .signup-right {
+        width: 50%;
+    }
+
+    .hero-content h2 {
+        font-size: 48px;
+    }
+
+    .features {
+        left: 30px;
+    }
+
+    .feature-card {
+        width: 120px;
+    }
+
+    .brand {
+        padding-left: 30px;
+    }
+
+    .hero-content {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .signup-page {
+        display: block;
+    }
+
+    .signup-left {
+        width: 100%;
+
+        min-height: 420px;
+    }
+
+    .signup-right {
+        width: 100%;
+
+        min-height: auto;
+    }
+
+    .hero-content {
+        margin-top: 60px;
+    }
+
+    .features {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .signup-right {
+        padding: 15px;
+    }
+
+    .signup-box {
+        padding: 28px 22px;
+    }
+
+    .brand {
+        padding: 30px 25px 0;
+    }
+
+    .brand h1 {
+        font-size: 28px;
+    }
+
+    .hero-content {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .hero-content h2 {
+        font-size: 42px;
+    }
+
+    .roles {
+        flex-direction: column;
+    }
+}

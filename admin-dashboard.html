@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>TripWheels | Admin Dashboard</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f4f8ff;
+    color: #071426;
+}
+
+header {
+    height: 70px;
+    background: #071426;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-circle {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.logout {
+    border: 1px solid #67e8f9;
+
+    background: transparent;
+
+    color: white;
+
+    padding: 9px 20px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.container {
+    padding: 45px 7%;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 32px;
+}
+
+.welcome p {
+    color: #69778b;
+    margin-top: 8px;
+}
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.stat {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(30,60,90,.08);
+}
+
+.stat h2 {
+    color: #2563eb;
+
+    margin-top: 8px;
+}
+
+.admin-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.action {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border-left:
+        5px solid #2563eb;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.action:hover {
+    transform: translateY(-5px);
+}
+
+.action h3 {
+    margin-bottom: 8px;
+}
+
+.action p {
+    color: #788397;
+
+    font-size: 13px;
+}
+
+@media(max-width:800px) {
+
+    .stats,
+    .admin-actions {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-circle">
+            TW
+        </div>
+
+        <div>
+            <b>TripWheels</b>
+            <small> Admin Dashboard</small>
+        </div>
+
+    </div>
+
+
+    <button
+        class="logout"
+        onclick="logout()">
+
+        Logout
+
+    </button>
+
+</header>
+
+
+<div class="container">
+
+
+    <div class="welcome">
+
+        <h1>
+            Admin Dashboard 🛠️
+        </h1>
+
+        <p>
+            Manage TripWheels platform.
+        </p>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <p>
+                Total Users
+            </p>
+
+            <h2>
+                0
+            </h2>
+
+        </div>
+
+
+        <div class="stat">
+
+            <p>
+                Vehicles
+            </p>
+
+            <h2>
+                0
+            </h2>
+
+        </div>
+
+
+        <div class="stat">
+
+            <p>
+                Bookings
+            </p>
+
+            <h2>
+                0
+            </h2>
+
+        </div>
+
+
+        <div class="stat">
+
+            <p>
+                Owners
+            </p>
+
+            <h2>
+                0
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN ACTIONS -->
+
+    <div class="admin-actions">
+
+
+        <div class="action">
+
+            <h3>
+                👥 Manage Users
+            </h3>
+
+            <p>
+                View and manage registered users.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <h3>
+                🚗 Manage Vehicles
+            </h3>
+
+            <p>
+                Add, approve or remove vehicles.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <h3>
+                📅 Manage Bookings
+            </h3>
+
+            <p>
+                View all vehicle bookings.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <h3>
+                👤 Manage Owners
+            </h3>
+
+            <p>
+                Manage vehicle owners.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <h3>
+                📊 Reports
+            </h3>
+
+            <p>
+                View rental and platform reports.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <h3>
+                ⚙️ Settings
+            </h3>
+
+            <p>
+                Manage TripWheels settings.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function logout() {
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

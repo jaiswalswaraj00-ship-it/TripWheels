@@ -1,0 +1,269 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.page {
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+    background: white;
+    padding: 25px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8ebf0;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #727987;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn {
+    border: none;
+    background: #14213d;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    background: #218380;
+}
+
+
+/* ==========================================
+   FORM CONTAINER
+========================================== */
+
+.form-container {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+
+/* ==========================================
+   FORM SECTION
+========================================== */
+
+.form-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2 {
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* ==========================================
+   FORM GROUP
+========================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343b49;
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d9dee7;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+    color: #172033;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #218380;
+    box-shadow: 0 0 0 3px rgba(33, 131, 128, 0.10);
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.image-note {
+    color: #727987;
+    font-size: 13px;
+    margin-top: -12px;
+    margin-bottom: 18px;
+}
+
+.image-box {
+    border: 1px dashed #cfd5df;
+    border-radius: 12px;
+    padding: 22px;
+    background: #fafbfc;
+}
+
+.image-box input {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.image-box p {
+    color: #727987;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   FORM ACTIONS
+========================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.cancel-btn,
+.save-btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* CANCEL */
+
+.cancel-btn {
+    background: #e9edf3;
+    color: #343b49;
+}
+
+.cancel-btn:hover {
+    background: #dce1e9;
+}
+
+
+/* SAVE */
+
+.save-btn {
+    background: #218380;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #176e6c;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .form-container {
+        margin-top: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+}

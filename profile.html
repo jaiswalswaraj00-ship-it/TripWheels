@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripWheels - Complete Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="logo">TW</div>
+
+            <div>
+                <h2>TripWheels</h2>
+                <span>Self-drive rentals</span>
+            </div>
+        </div>
+
+        <div class="secure">
+            🔒 Secure Profile
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="profile-container">
+
+
+        <!-- LEFT SECTION -->
+        <section class="profile-intro">
+
+            <div class="intro-icon">
+                👤
+            </div>
+
+            <span class="small-heading">
+                WELCOME TO<br>
+                TRIPWHEELS
+            </span>
+
+            <h1>
+                Complete<br>
+                your<br>
+                <span>profile</span>
+            </h1>
+
+            <p>
+                Just a few details are needed before you start
+                exploring cars, bikes and scooters in Amravati.
+            </p>
+
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>Verified Account</strong>
+
+                        <p>
+                            Your phone number is verified through OTP.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🛡
+                    </div>
+
+                    <div>
+                        <strong>Secure Booking</strong>
+
+                        <p>
+                            ID verification helps keep rentals safe.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🚗
+                    </div>
+
+                    <div>
+                        <strong>Ready to Ride</strong>
+
+                        <p>
+                            Complete your profile and find your ride.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROFILE CARD -->
+        <section class="profile-card">
+
+
+            <!-- CARD HEADER -->
+            <div class="card-header">
+
+                <div>
+                    <h2>Personal Information</h2>
+
+                    <p>
+                        Complete your details to continue
+                    </p>
+                </div>
+
+                <div class="progress">
+                    <span>Profile</span>
+                    <strong>70%</strong>
+                </div>
+
+            </div>
+
+
+
+            <form id="profileForm">
+
+
+                <!-- PROFILE TITLE -->
+                <div class="avatar-section">
+
+                    <div class="avatar">
+                        👤
+                    </div>
+
+                    <div>
+                        <h3>Your Profile</h3>
+
+                        <p>
+                            Enter your personal information below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <!-- NAME + EMAIL -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>👤</span>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>✉️</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+                <div class="form-group phone-group">
+
+                    <label for="phone">
+
+                        Phone Number
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </label>
+
+                    <div class="input-wrapper phone-input">
+
+                        <span>📱</span>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Verified phone number"
+                            readonly
+                        >
+
+                        <span class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+                    <small>
+                        This number was verified using OTP.
+                    </small>
+
+                </div>
+
+
+
+                <!-- DIVIDER -->
+                <div class="section-title">
+
+                    <div class="line"></div>
+
+                    <span>ID Verification</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+
+                <!-- ID TYPE + ID NUMBER -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="idType">
+                            ID Proof Type
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>🪪</span>
+
+                            <select id="idType" required>
+
+                                <option value="">
+                                    Select ID proof
+                                </option>
+
+                                <option value="aadhaar">
+                                    Aadhaar Card
+                                </option>
+
+                                <option value="driving">
+                                    Driving Licence
+                                </option>
+
+                                <option value="passport">
+                                    Passport
+                                </option>
+
+                                <option value="voter">
+                                    Voter ID
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="idNumber">
+                            ID Number
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>🔢</span>
+
+                            <input
+                                type="text"
+                                id="idNumber"
+                                placeholder="Enter ID number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- UPLOAD -->
+                <div class="form-group">
+
+                    <label>
+                        Upload ID Proof
+                    </label>
+
+                    <label
+                        class="upload-box"
+                        for="idFile"
+                    >
+
+                        <div class="upload-icon">
+                            📄
+                        </div>
+
+                        <div class="upload-text">
+
+                            <strong>
+                                Upload your ID document
+                            </strong>
+
+                            <p id="fileText">
+                                JPG, PNG or PDF • Max 5 MB
+                            </p>
+
+                        </div>
+
+                        <span class="browse">
+                            Browse
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="idFile"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        hidden
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- AGREEMENT -->
+                <label class="agreement">
+
+                    <input
+                        type="checkbox"
+                        id="agreement"
+                        required
+                    >
+
+                    <span>
+                        I confirm that the information provided
+                        is correct and belongs to me.
+                    </span>
+
+                </label>
+
+
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="continue-btn"
+                >
+
+                    <span>
+                        Continue to TripWheels
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 TripWheels •
+        Self-drive bike & car rentals
+
+    </footer>
+
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripWheels | Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ================= LEFT SIDE ================= -->
+        <section class="hero">
+
+            <!-- Car background -->
+            <div class="car-bg"></div>
+            <div class="dark-overlay"></div>
+
+            <!-- Content -->
+            <div class="hero-content">
+
+                <div class="brand">
+                    <div class="logo-box">TW</div>
+
+                    <div>
+                        <h1>TripWheels</h1>
+                        <p>Self-drive rentals</p>
+                    </div>
+                </div>
+
+                <div class="hero-text">
+
+                    <span class="small-title">
+                        RIDE • EXPLORE • REPEAT
+                    </span>
+
+                    <h2>
+                        Your journey<br>
+                        starts here.
+                    </h2>
+
+                    <p class="description">
+                        Rent bikes, scooters and cars easily
+                        with TripWheels.
+                    </p>
+
+                </div>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <span>🚗</span>
+                        <p>Cars</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>🏍️</span>
+                        <p>Bikes</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>📅</span>
+                        <p>Easy Booking</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+        <section class="login-section">
+
+            <div class="login-box">
+
+                <div class="login-heading">
+
+                    <span class="welcome">
+                        Welcome Back
+                    </span>
+
+                    <h2>Login to TripWheels</h2>
+
+                    <p>
+                        Continue your journey with us
+                    </p>
+
+                </div>
+
+
+                <!-- ROLE -->
+                <div class="role-title">
+                    Continue as
+                </div>
+
+                <div class="roles">
+
+                    <button
+                        type="button"
+                        id="userRole"
+                        class="role-card active"
+                        onclick="selectRole('user')">
+
+                        <div class="role-icon">👤</div>
+
+                        <div>
+                            <strong>User</strong>
+                            <small>Rent a vehicle</small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="ownerRole"
+                        class="role-card"
+                        onclick="selectRole('owner')">
+
+                        <div class="role-icon">🚘</div>
+
+                        <div>
+                            <strong>Owner</strong>
+                            <small>List your vehicle</small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form onsubmit="loginUser(event)">
+
+                    <label>Phone Number</label>
+
+                    <div class="input-box">
+
+                        <span class="country-code">+91</span>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter 10-digit phone number"
+                            maxlength="10"
+                            required>
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-btn"
+                            onclick="togglePassword()">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember">
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+
+                        <a href="#" onclick="forgotPassword(event)">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button class="login-btn" type="submit">
+                        Continue with Phone
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <button class="signup-btn" onclick="signup()">
+                    Create new account
+                </button>
+
+
+                <p class="terms">
+                    By continuing, you agree to our
+                    <a href="#">Terms</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

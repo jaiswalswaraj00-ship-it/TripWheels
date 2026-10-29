@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard | TripWheels</title>
+
+    <link rel="stylesheet" href="user-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+<!-- =====================================
+     SIDEBAR
+====================================== -->
+
+<aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <span>Trip</span>Wheels
+    </div>
+
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+
+
+        <a href="#" class="nav-link active">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a href="#vehicles" class="nav-link">
+            <span class="nav-icon">🚗</span>
+            <span>Available Vehicles</span>
+        </a>
+
+
+        <a href="my-bookings.html" class="nav-link">
+            <span class="nav-icon">📅</span>
+            <span>My Bookings</span>
+        </a>
+
+
+        <a href="profile.html" class="nav-link">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </a>
+
+    </nav>
+
+
+    <!-- SUPPORT SECTION -->
+    <div class="support-section">
+
+        <p class="    ">
+            
+        </p>
+
+
+        <a href="help.html" class="nav-link support-link">
+
+            <span class="nav-icon">❓</span>
+
+            <span>
+                Help & Support
+            </span>
+
+            <span class="nav-arrow">
+                ›
+            </span>
+
+        </a>
+
+
+        <a href="feedback.html" class="nav-link support-link">
+
+            <span class="nav-icon">💬</span>
+
+            <span>
+                Feedback
+            </span>
+
+            <span class="nav-arrow">
+                ›
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="sidebar-bottom">
+
+        <button
+            class="logout-btn"
+            onclick="logout()">
+
+            <span class="nav-icon">🚪</span>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        User Dashboard
+                    </h1>
+
+                    <p>
+                        Find your perfect ride and start your journey.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    class="user-box">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div>
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <small>
+                            Customer
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </header>
+
+
+            <!-- =====================================
+                 WELCOME BANNER
+            ====================================== -->
+
+            <section class="welcome-banner">
+
+                <div>
+
+                    <p class="welcome-small">
+                        WELCOME TO TRIPWHEELS
+                    </p>
+
+                    <h2>
+                        Ride. Explore. Repeat. 🚗
+                    </h2>
+
+                    <p>
+                        Choose a vehicle and make your journey
+                        comfortable and easy.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 SEARCH
+            ====================================== -->
+
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search vehicle, brand or model...">
+
+                </div>
+
+
+                <select id="typeFilter">
+
+                    <option value="all">
+                        All Vehicle Types
+                    </option>
+
+                    <option value="Bike">
+                        Bike
+                    </option>
+
+                    <option value="Scooty">
+                        Scooty
+                    </option>
+
+                    <option value="Car">
+                        Car
+                    </option>
+
+                    <option value="Van">
+                        Van
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="text"
+                    id="locationFilter"
+                    placeholder="📍 Location">
+
+
+                <button
+                    class="clear-btn"
+                    onclick="clearFilters()">
+
+                    Clear
+
+                </button>
+
+            </section>
+
+
+            <!-- =====================================
+                 VEHICLE SECTION
+            ====================================== -->
+
+            <section
+                class="vehicles-section"
+                id="vehicles">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Available Vehicles
+                        </h2>
+
+                        <p id="vehicleCount">
+                            Browse vehicles available for rent
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VEHICLES WILL BE LOADED HERE -->
+
+                <div
+                    id="vehicleList"
+                    class="vehicle-list">
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+<!-- =====================================
+     LIVE LOCATION
+===================================== -->
+
+<section
+    id="liveLocationSection"
+    style="
+        width: calc(100% - 280px);
+        margin-left: 280px;
+        padding: 20px 40px 30px;
+        box-sizing: border-box;
+        background: #f5f6fa;
+    ">
+
+    <div
+        style="
+            width: 100%;
+            min-height: 90px;
+            background: #ffffff;
+            border: 1px solid #e3e6ef;
+            border-radius: 18px;
+            padding: 18px 24px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 8px 25px rgba(20,25,60,0.08);
+        ">
+
+        <!-- ICON -->
+
+        <div
+            style="
+                width: 52px;
+                height: 52px;
+                min-width: 52px;
+                border-radius: 15px;
+                background: #fff0f6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 25px;
+            ">
+
+            📍
+
+        </div>
+
+
+        <!-- TEXT -->
+
+        <div style="flex: 1;">
+
+            <h3
+                style="
+                    margin: 0 0 5px 0;
+                    font-size: 20px;
+                    color: #15182d;
+                    font-weight: 700;
+                ">
+
+                Live Location
+
+            </h3>
+
+            <p
+                id="locationStatus"
+                style="
+                    margin: 0;
+                    color: #69708a;
+                    font-size: 14px;
+                ">
+
+                Your location is not being shared.
+
+            </p>
+
+        </div>
+
+
+        <!-- START BUTTON -->
+
+        <button
+            type="button"
+            id="startLocationBtn"
+            onclick="startLiveLocation()"
+            style="
+                border: none;
+                border-radius: 10px;
+                padding: 13px 22px;
+                background: linear-gradient(
+                    135deg,
+                    #17183b,
+                    #e51b68
+                );
+                color: white;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                white-space: nowrap;
+            ">
+
+            📍 Share Live Location
+
+        </button>
+
+
+        <!-- STOP BUTTON -->
+
+        <button
+            type="button"
+            id="stopLocationBtn"
+            onclick="stopLiveLocation()"
+            style="
+                display: none;
+                border: none;
+                border-radius: 10px;
+                padding: 13px 22px;
+                background: #555b70;
+                color: white;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+                white-space: nowrap;
+            ">
+
+            ⛔ Stop Sharing
+
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================================
+         BOOKING MODAL
+    ========================================== -->
+
+    <div
+        id="bookingModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeBookingModal()">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                Book Vehicle
+            </h2>
+
+            <p class="modal-subtitle">
+                Enter your rental details.
+            </p>
+
+
+            <div
+                id="selectedVehicle"
+                class="selected-vehicle">
+
+            </div>
+
+
+            <form id="bookingForm">
+
+                <div class="form-group">
+
+                    <label for="bookingDate">
+                        Rental Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="rentalDays">
+                        Number of Days
+                    </label>
+
+                    <input
+                        type="number"
+                        id="rentalDays"
+                        min="1"
+                        value="1"
+                        required>
+
+                </div>
+
+
+                <div class="total-box">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="totalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="confirm-btn">
+
+                    Confirm Booking
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="user-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Vehicle | TripWheels</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f4f7fb, #eef2f7);
+            padding: 30px 15px;
+            color: #18223c;
+        }
+
+        .booking-container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 18px 55px rgba(20, 30, 60, 0.13);
+        }
+
+        /* HEADER */
+
+        .booking-header {
+            padding: 30px 35px;
+            background: linear-gradient(135deg, #11162f, #273c2c);
+            color: white;
+        }
+
+        .booking-header h1 {
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .booking-header p {
+            color: rgba(255,255,255,0.75);
+            font-size: 14px;
+        }
+
+        /* CONTENT */
+
+        .booking-content {
+            padding: 30px 35px;
+        }
+
+        /* VEHICLE */
+
+        .vehicle-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 18px;
+            background: #f8fafc;
+            border: 1px solid #e4e8ef;
+            border-radius: 16px;
+            margin-bottom: 28px;
+        }
+
+        .vehicle-image {
+            width: 150px;
+            height: 105px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #e9edf3;
+        }
+
+        .vehicle-info {
+            flex: 1;
+        }
+
+        .vehicle-info h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #17213c;
+        }
+
+        .vehicle-info p {
+            font-size: 14px;
+            color: #687386;
+            margin: 5px 0;
+        }
+
+        .price-tag {
+            text-align: right;
+        }
+
+        .price-tag span {
+            display: block;
+            color: #7b8494;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .price-tag strong {
+            color: #d81159;
+            font-size: 23px;
+        }
+
+        /* SECTION */
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 28px 0 15px;
+            color: #18223c;
+        }
+
+        .section-title span {
+            color: #218380;
+            margin-right: 7px;
+        }
+
+        /* FORM */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #39445a;
+            margin-bottom: 7px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dfe4ec;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            color: #27344d;
+            background: white;
+        }
+
+        .form-group input:focus {
+            border-color: #218380;
+            box-shadow: 0 0 0 3px rgba(33,131,128,0.08);
+        }
+
+        /* LOCATION */
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .location-box {
+            padding: 18px;
+            border-radius: 15px;
+            background: #f5fbfa;
+            border: 1px solid #d8e9e7;
+        }
+
+        .location-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .location-icon {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #218380;
+            color: white;
+            font-size: 18px;
+        }
+
+        .drop-icon {
+            background: #d81159;
+        }
+
+        .location-heading h3 {
+            font-size: 15px;
+            color: #1e2b42;
+        }
+
+        .location-box p {
+            color: #5f6b7d;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .fixed-label {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: rgba(33,131,128,0.1);
+            color: #218380;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #218380;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* DURATION */
+
+        .duration-box {
+            margin-top: 18px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            background: #fff2f6;
+            color: #75455a;
+            font-size: 13px;
+        }
+
+        /* PRICE */
+
+        .bill-box {
+            margin-top: 25px;
+            border: 1px solid #e3e7ed;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .bill-header {
+            padding: 15px 18px;
+            background: #f7f8fa;
+            font-weight: 700;
+            color: #25314a;
+        }
+
+        .bill-body {
+            padding: 18px;
+        }
+
+        .bill-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #5e697b;
+            font-size: 14px;
+        }
+
+        .bill-row strong {
+            color: #27344d;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e8ebef;
+            margin: 9px 0;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 12px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .total-row strong {
+            color: #d81159;
+            font-size: 23px;
+        }
+
+        /* PAYMENT */
+
+        .payment-box {
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid #e2e6ed;
+            border-radius: 15px;
+        }
+
+        .payment-box h3 {
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 9px;
+            background: #f7f8fb;
+            cursor: pointer;
+            color: #344054;
+            font-size: 14px;
+        }
+
+        .payment-option:hover {
+            background: #fff1f6;
+        }
+
+        .payment-option input {
+            accent-color: #d81159;
+        }
+
+        /* ADVANCE */
+
+        .advance-box {
+            margin-top: 18px;
+            padding: 17px;
+            border-radius: 14px;
+            background: linear-gradient(
+                135deg,
+                rgba(216,17,89,0.07),
+                rgba(33,131,128,0.06)
+            );
+            border: 1px solid rgba(216,17,89,0.15);
+        }
+
+        .advance-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        .advance-row strong {
+            color: #d81159;
+        }
+
+        .remaining {
+            color: #218380 !important;
+        }
+
+        /* BUTTON */
+
+        .book-btn {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #11162f, #d81159);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(216,17,89,0.25);
+        }
+
+        .back-btn {
+            width: 100%;
+            margin-top: 11px;
+            padding: 12px;
+            border: 1px solid #dfe3e9;
+            border-radius: 10px;
+            background: white;
+            color: #566174;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .secure-note {
+            text-align: center;
+            margin-top: 15px;
+            color: #7a8494;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .booking-content {
+                padding: 22px;
+            }
+
+            .vehicle-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .vehicle-image {
+                width: 100%;
+                height: 180px;
+            }
+
+            .price-tag {
+                text-align: left;
+            }
+
+            .form-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="booking-container">
+
+    <!-- HEADER -->
+
+    <div class="booking-header">
+
+        <h1>Complete Your Booking</h1>
+
+        <p>
+            Select your rental date, time and payment method.
+        </p>
+
+    </div>
+
+
+    <div class="booking-content">
+
+
+        <!-- VEHICLE -->
+
+        <div class="vehicle-box">
+
+            <img
+                id="vehicleImage"
+                class="vehicle-image"
+                src=""
+                alt="Vehicle">
+
+            <div class="vehicle-info">
+
+                <h2 id="vehicleName">
+                    Vehicle
+                </h2>
+
+                <p>
+                    Type:
+                    <strong id="vehicleType">
+                        Vehicle
+                    </strong>
+                </p>
+
+                <p>
+                    Registration:
+                    <span id="vehicleRegistration">
+                        --
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="price-tag">
+
+                <span>
+                    Rental Rate
+                </span>
+
+                <strong id="vehiclePrice">
+                    ₹0/day
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RENTAL PERIOD -->
+
+        <div class="section-title">
+            <span>🕐</span>
+            Rental Period
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    Pickup Date
+                </label>
+
+                <input
+                    type="date"
+                    id="bookingDate"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Pickup Time
+                </label>
+
+                <input
+                    type="time"
+                    id="pickupTime"
+                    value="10:00"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Return Date
+                </label>
+
+                <input
+                    type="date"
+                    id="returnDate"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Return Time
+                </label>
+
+                <input
+                    type="time"
+                    id="returnTime"
+                    value="10:00"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <div class="duration-box">
+
+            ⏱️ Rental Duration:
+
+            <strong id="durationText">
+                1 day
+            </strong>
+
+        </div>
+
+
+        <!-- PICKUP / DROP -->
+
+        <div class="section-title">
+            <span>📍</span>
+            Pickup & Drop Location
+        </div>
+
+
+        <div class="location-grid">
+
+
+            <!-- PICKUP -->
+
+            <div class="location-box">
+
+                <div class="location-heading">
+
+                    <div class="location-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Pickup Location
+                    </h3>
+
+                </div>
+
+                <p>
+                    <strong>
+                        Government College of Engineering, Amravati
+                    </strong>
+                    <br>
+                    VMV Road, Near Kathora Naka,
+                    Amravati
+                </p>
+
+                <span class="fixed-label">
+                    🔒 Fixed Location
+                </span>
+
+                <br>
+
+                <a
+                    class="map-link"
+                    target="_blank"
+                    href="https://www.google.com/maps/search/?api=1&query=Government+College+of+Engineering+Amravati">
+                    View on Map →
+                </a>
+
+            </div>
+
+
+            <!-- DROP -->
+
+            <div class="location-box">
+
+                <div class="location-heading">
+
+                    <div class="location-icon drop-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Drop Location
+                    </h3>
+
+                </div>
+
+                <p>
+                    <strong>
+                        Government College of Engineering, Amravati
+                    </strong>
+                    <br>
+                    VMV Road, Near Kathora Naka,
+                    Amravati
+                </p>
+
+                <span class="fixed-label">
+                    🔒 Fixed Location
+                </span>
+
+                <br>
+
+                <a
+                    class="map-link"
+                    target="_blank"
+                    href="https://www.google.com/maps/search/?api=1&query=Government+College+of+Engineering+Amravati">
+                    View on Map →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRICE SUMMARY -->
+
+        <div class="section-title">
+            <span>🧾</span>
+            Price Summary
+        </div>
+
+
+        <div class="bill-box">
+
+            <div class="bill-header">
+                Booking Charges
+            </div>
+
+            <div class="bill-body">
+
+                <div class="bill-row">
+
+                    <span>
+                        Rental Charges
+                    </span>
+
+                    <strong id="rentalCharges">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="bill-row">
+
+                    <span>
+                        Platform Fee
+                    </span>
+
+                    <strong>
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="total-row">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="totalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="section-title">
+            <span>💳</span>
+            Payment Method
+        </div>
+
+
+        <div class="payment-box">
+
+            <h3>
+                Select Payment Method
+            </h3>
+
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="UPI"
+                    checked>
+
+                📱 UPI
+
+            </label>
+
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="Card">
+
+                💳 Card
+
+            </label>
+
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="Pay at Pickup">
+
+                💵 Pay at Pickup
+
+            </label>
+
+        </div>
+
+
+        <!-- ADVANCE -->
+
+        <div class="advance-box">
+
+            <div class="advance-row">
+
+                <span>
+                    Advance Payment (20%)
+                </span>
+
+                <strong id="advanceAmount">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="advance-row">
+
+                <span>
+                    Remaining Amount
+                </span>
+
+                <strong
+                    id="remainingAmount"
+                    class="remaining">
+
+                    ₹0
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONFIRM -->
+
+        <button
+            type="button"
+            class="book-btn"
+            id="payAdvanceBtn">
+
+            💳 Pay Advance & Confirm Booking
+
+        </button>
+
+
+        <button
+            type="button"
+            class="back-btn"
+            onclick="history.back()">
+
+            ← Go Back
+
+        </button>
+
+
+        <div class="secure-note">
+
+            🔐 Payment is currently a project/demo flow.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="booking-form.js"></script>
+
+</body>
+</html>

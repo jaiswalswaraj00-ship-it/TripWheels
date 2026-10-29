@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripWheels | Self Drive Rentals</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-section">
+
+        <div class="logo-circle">
+            TW
+        </div>
+
+        <div class="logo-text">
+            <h2>TripWheels</h2>
+            <p>Self-drive rentals</p>
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a href="#about">About</a>
+
+        <a href="#fleet">Our Fleet</a>
+
+        <a href="#how">How It Works</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+        <button
+            class="location-button"
+            onclick="getLocation()">
+
+            📍 <span id="locationText">Amravati</span>
+
+        </button>
+
+
+        <button
+            class="login-button"
+            onclick="goToLogin()">
+
+            Login / Signup
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+
+    <div class="hero-left">
+
+        <p class="small-title">
+            SELF-DRIVE BIKE & CAR RENTALS
+        </p>
+
+
+        <h1>
+            Explore with
+            <br>
+            <span>TripWheels</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            Rent bikes, scooters and self-drive cars
+            for a few hours or a full day.
+
+        </p>
+
+
+        <!-- VEHICLE TABS -->
+
+        <div class="vehicle-tabs">
+
+            <button
+                class="vehicle-tab active"
+                onclick="selectVehicle('all', this)">
+
+                🚗🏍 All
+
+            </button>
+
+
+            <button
+                class="vehicle-tab"
+                onclick="selectVehicle('bike', this)">
+
+                🏍️ Bike
+
+            </button>
+
+
+            <button
+                class="vehicle-tab"
+                onclick="selectVehicle('car', this)">
+
+                🚙 Car
+
+            </button>
+
+
+            <button
+                class="vehicle-tab"
+                onclick="selectVehicle('scooter', this)">
+
+                🛵 Scooter
+
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH BOX -->
+
+        <div class="search-box">
+
+
+            <label>
+                Select City
+            </label>
+
+
+            <div class="input-box">
+
+                <span>🛑</span>
+
+                <input
+                    type="text"
+                    id="city"
+                    value="Amravati"
+                    placeholder="Enter city">
+
+            </div>
+
+
+            <div class="date-section">
+
+
+                <div class="date-field">
+
+                    <label>
+                        Pickup Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="pickupDate">
+
+                </div>
+
+
+                <div class="date-field">
+
+                    <label>
+                        Return Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="returnDate">
+
+                </div>
+
+            </div>
+
+
+            <div class="date-section">
+
+
+                <div class="date-field">
+
+                    <label>
+                        Pickup Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="pickupTime">
+
+                </div>
+
+
+                <div class="date-field">
+
+                    <label>
+                        Return Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="returnTime">
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="search-button"
+                onclick="searchVehicles()">
+
+                🔍 Search Vehicles
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HERO RIGHT ================= -->
+
+    <div class="hero-right">
+
+        <div class="hero-overlay">
+
+            <span>
+                TRAVEL • EXPLORE • RIDE
+            </span>
+
+            <h2>
+                Your journey<br>
+                starts here.
+            </h2>
+
+            <p>
+                Choose your vehicle<br>
+                and start your journey.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FLEET ================= -->
+
+<section
+    class="fleet-section"
+    id="fleet">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>
+                OUR FLEET
+            </p>
+
+            <h2>
+                Explore our vehicles
+            </h2>
+
+        </div>
+
+
+        <button
+            class="view-all"
+            onclick="showAllVehicles()">
+
+            View All Vehicles →
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="vehicle-container"
+        id="vehicleContainer">
+
+
+        <!-- ================= SCOOTER ================= -->
+
+        <div
+            class="vehicle-card"
+            data-type="scooter">
+
+
+            <div class="vehicle-image scooter-image">
+
+                <img
+                    src="images/scooter.avif"
+                    alt="City Scooter">
+
+            </div>
+
+
+            <div class="vehicle-details">
+
+                <div class="vehicle-title">
+
+                    <h3>
+                        City Scooter
+                    </h3>
+
+                    <span>
+                        SCOOTER
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Automatic • 2 Seats • Petrol
+                </p>
+
+
+                <div class="price">
+
+                    <strong>
+                        ₹80
+                        <small>/hour</small>
+                    </strong>
+
+                    <b>
+                        ₹500/day
+                    </b>
+
+                </div>
+
+
+               <button 
+    onclick="window.location.href='login.html'">
+
+    View & Book
+
+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BIKE ================= -->
+
+        <div
+            class="vehicle-card"
+            data-type="bike">
+
+
+            <div class="vehicle-image bike-image">
+
+                <img
+                    src="images/bike.jpg"
+                    alt="Street Bike">
+
+            </div>
+
+
+            <div class="vehicle-details">
+
+                <div class="vehicle-title">
+
+                    <h3>
+                        Street Bike
+                    </h3>
+
+                    <span>
+                        BIKE
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Manual • 2 Seats • Petrol
+                </p>
+
+
+                <div class="price">
+
+                    <strong>
+                        ₹150
+                        <small>/hour</small>
+                    </strong>
+
+                    <b>
+                        ₹900/day
+                    </b>
+
+                </div>
+
+
+                <button 
+    onclick="window.location.href='login.html'">
+
+    View & Book
+
+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CAR ================= -->
+
+        <div
+            class="vehicle-card"
+            data-type="car">
+
+
+            <div class="vehicle-image car-image">
+
+                <img
+                    src="images/car.avif"
+                    alt="City Car">
+
+            </div>
+
+
+            <div class="vehicle-details">
+
+                <div class="vehicle-title">
+
+                    <h3>
+                        City Car
+                    </h3>
+
+                    <span>
+                        CAR
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Automatic • 5 Seats • AC
+                </p>
+
+
+                <div class="price">
+
+                    <strong>
+                        ₹180
+                        <small>/hour</small>
+                    </strong>
+
+                    <b>
+                        ₹1200/day
+                    </b>
+
+                </div>
+
+
+              <button 
+    onclick="window.location.href='login.html'">
+
+    View & Book
+
+</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section
+    class="how-section"
+    id="how">
+
+
+    <p class="section-small">
+        HOW IT WORKS
+    </p>
+
+
+    <h2>
+        Rent in 4 simple steps
+    </h2>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Choose
+            </h3>
+
+            <p>
+                Select a bike, scooter or car near you.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Select Time
+            </h3>
+
+            <p>
+                Choose hourly or daily rental.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Verify
+            </h3>
+
+            <p>
+                Complete OTP and ID verification.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>
+                Ride
+            </h3>
+
+            <p>
+                Pick up your vehicle and start your journey.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about-section"
+    id="about">
+
+
+    <div>
+
+        <p class="section-small">
+            ABOUT TRIPWHEELS
+        </p>
+
+        <h2>
+            Easy vehicle rental for everyone
+        </h2>
+
+        <p>
+            TripWheels connects vehicle owners with people
+            who need bikes, scooters and cars for short-term
+            self-drive rentals.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CUSTOMER FEEDBACK
+========================================= -->
+
+<section class="customer-feedback">
+
+    <div class="feedback-intro">
+
+        <span class="feedback-label">
+            CUSTOMER EXPERIENCES
+        </span>
+
+        <h2>
+            What Our Users Say
+        </h2>
+
+        <p>
+            Real experiences from people who have
+            used TripWheels for their journey.
+        </p>
+
+    </div>
+
+
+    <div class="feedback-slider">
+
+        <div
+            id="homepageFeedback"
+            class="homepage-feedback-card">
+
+            <div class="feedback-loading">
+                Loading feedback...
+            </div>
+
+        </div>
+
+
+        <!-- DOTS -->
+
+        <div
+            id="feedbackDots"
+            class="feedback-dots">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+
+    <div>
+
+        <h2>
+            TripWheels
+        </h2>
+
+        <p>
+            Self-drive bike & car rentals
+        </p>
+
+    </div>
+
+
+    <div class="footer-contact">
+
+        <p>
+            📍 Amravati, Maharashtra
+        </p>
+
+        <p>
+            📞 Contact TripWheels
+        </p>
+
+    </div>
+
+
+    <p>
+        © 2026 TripWheels. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

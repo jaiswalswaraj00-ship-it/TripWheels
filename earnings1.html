@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Earnings | TripWheels</title>
+
+    <link rel="stylesheet" href="earnings1.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Earnings</h1>
+                <p>Track your vehicle rental income</p>
+            </div>
+
+            <a href="owner-dashboard.html" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </header>
+
+
+        <!-- EARNING SUMMARY -->
+        <section class="summary">
+
+            <div class="earning-card">
+                <div class="icon">💰</div>
+
+                <div>
+                    <p>Total Earnings</p>
+                    <h2 id="totalEarnings">₹0</h2>
+                </div>
+            </div>
+
+
+            <div class="earning-card">
+                <div class="icon">✅</div>
+
+                <div>
+                    <p>Completed Bookings</p>
+                    <h2 id="completedBookings">0</h2>
+                </div>
+            </div>
+
+
+            <div class="earning-card">
+                <div class="icon">📅</div>
+
+                <div>
+                    <p>This Month</p>
+                    <h2 id="monthlyEarnings">₹0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- TRANSACTIONS -->
+        <section class="earnings-section">
+
+            <div class="section-title">
+                <div>
+                    <h2>Transaction History</h2>
+                    <p>Your completed rental payments</p>
+                </div>
+            </div>
+
+
+            <div id="earningsList" class="earnings-list">
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="earnings1.js"></script>
+
+</body>
+
+</html>

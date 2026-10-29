@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #F7F8FC;
+    color: #172033;
+}
+
+/* =====================================
+   PAGE
+===================================== */
+
+.feedback-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.feedback-header {
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480
+        );
+
+    color: white;
+
+    padding: 28px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 2px solid #E91E63;
+}
+
+.feedback-header h1 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.feedback-header p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+
+.back-btn {
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480,
+            #E91E63
+        );
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    border: 1px solid #E91E63;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 7px 18px rgba(44, 52, 128, 0.20);
+}
+
+.back-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #111525,
+            #2C3480,
+            #E91E63
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(233, 30, 99, 0.25);
+}
+
+/* =====================================
+   MAIN
+===================================== */
+
+.feedback-container {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.feedback-card {
+    width: 100%;
+    max-width: 650px;
+
+    background: #FFFFFF;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    border: 1px solid #E1E3EB;
+
+    box-shadow:
+        0 10px 35px rgba(44, 52, 128, 0.10);
+
+    text-align: center;
+}
+
+.feedback-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480
+        );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    border: 2px solid #E91E63;
+
+    box-shadow:
+        0 7px 20px rgba(233, 30, 99, 0.15);
+}
+
+.feedback-card h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: #111111;
+}
+
+.subtitle {
+    color: #667085;
+    margin-bottom: 32px;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 9px;
+
+    color: #26354D;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #D5D8E2;
+
+    border-radius: 9px;
+
+    padding: 13px 14px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    background: #FFFFFF;
+
+    color: #172033;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #E91E63;
+
+    box-shadow:
+        0 0 0 3px rgba(233, 30, 99, 0.10);
+
+    background: #FFFFFF;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9AA3B2;
+}
+
+/* =====================================
+   RATING
+===================================== */
+
+.rating {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 5px;
+}
+
+.rating span {
+    font-size: 38px;
+
+    color: #D6DBE0;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.rating span:hover {
+    transform: scale(1.12);
+    color: #E91E63;
+}
+
+.rating span.active {
+    color: #E91E63;
+}
+
+.rating-text {
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    color: #667085;
+}
+
+/* =====================================
+   CHARACTER COUNT
+===================================== */
+
+.character-count {
+    text-align: right;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #94A3B8;
+}
+
+/* =====================================
+   SUBMIT BUTTON
+===================================== */
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080A12 0%,
+            #2C3480 48%,
+            #E91E63 100%
+        );
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(44, 52, 128, 0.25),
+        0 8px 20px rgba(233, 30, 99, 0.12);
+}
+
+.submit-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #111525 0%,
+            #2C3480 45%,
+            #E91E63 100%
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(44, 52, 128, 0.30),
+        0 12px 28px rgba(233, 30, 99, 0.22);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.status-message {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #080A12,
+            #2C3480
+        );
+
+    color: rgba(255, 255, 255, 0.75);
+
+    text-align: center;
+
+    padding: 18px;
+
+    font-size: 13px;
+
+    border-top: 2px solid #E91E63;
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .feedback-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .feedback-header h1 {
+        font-size: 24px;
+    }
+
+    .feedback-card {
+        padding: 28px 20px;
+    }
+
+    .rating span {
+        font-size: 32px;
+    }
+}

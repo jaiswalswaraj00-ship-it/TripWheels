@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripWheels | Add Vehicle</title>
+
+    <link rel="stylesheet" href="add-vehicle.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🚗 Trip<span>Wheels</span>
+        </div>
+
+        <nav>
+
+            <a href="owner-dashboard.html">
+                📊 Dashboard
+            </a>
+
+            <a href="owner-dashboard.html#vehicles">
+                🏍️ My Vehicles
+            </a>
+
+            <a href="add-vehicle.html" class="active">
+                ➕ Add Vehicle
+            </a>
+
+            <a href="owner-dashboard.html#bookings">
+                📅 Bookings
+            </a>
+
+            <a href="owner-dashboard.html#earnings">
+                💰 Earnings
+            </a>
+
+            <!-- Existing profile page -->
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+        </nav>
+
+        <button
+            class="logout-btn"
+            id="logoutBtn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="page-header">
+
+            <div>
+                <h1>Add Vehicle</h1>
+
+                <p>
+                    Add your bike or car to TripWheels
+                </p>
+            </div>
+
+            <a
+                href="owner-dashboard.html"
+                class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </header>
+
+
+        <!-- FORM CARD -->
+        <section class="form-card">
+
+            <div class="form-title">
+
+                <div class="title-icon">
+                    🚘
+                </div>
+
+                <div>
+                    <h2>Vehicle Information</h2>
+
+                    <p>
+                        Enter the details of your vehicle
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="vehicleForm">
+
+
+                <!-- VEHICLE TYPE -->
+                <div class="form-group">
+
+                    <label for="vehicleType">
+                        Vehicle Type
+                        <span>*</span>
+                    </label>
+
+                    <select id="vehicleType" required>
+
+    <option value="">
+        Select Vehicle Type
+    </option>
+
+    <option value="Bike">
+        🏍️ Bike
+    </option>
+
+    <option value="Scooty">
+        🛵 Scooty
+    </option>
+
+    <option value="Car">
+        🚗 Car
+    </option>
+
+    
+
+</select>
+
+                </div>
+
+
+                <!-- BRAND + MODEL -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="brand">
+                            Brand
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="brand"
+                            placeholder="Example: Honda"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="model">
+                            Model
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="model"
+                            placeholder="Example: Activa 6G"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REGISTRATION + YEAR -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="registration">
+                            Registration Number
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registration"
+                            placeholder="Example: MH27AB1234"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="vehicleYear">
+                            Vehicle Year
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="vehicleYear"
+                            placeholder="Example: 2024"
+                            min="1990"
+                            max="2030"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRICE + LOCATION -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="price">
+                            Rental Price / Day
+                            <span>*</span>
+                        </label>
+
+                        <div class="price-input">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="price"
+                                placeholder="500"
+                                min="1"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+                            Location
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Example: Amravati"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FUEL -->
+                <div class="form-group">
+
+                    <label for="fuelType">
+                        Fuel Type
+                        <span>*</span>
+                    </label>
+
+                    <select
+                        id="fuelType"
+                        required>
+
+                        <option value="">
+                            Select fuel type
+                        </option>
+
+                        <option value="Petrol">
+                            Petrol
+                        </option>
+
+                        <option value="Diesel">
+                            Diesel
+                        </option>
+
+                        <option value="Electric">
+                            Electric
+                        </option>
+
+                        <option value="CNG">
+                            CNG
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- VEHICLE IMAGE -->
+                <div class="form-group">
+
+                    <label for="vehicleImage">
+                        Vehicle Image
+                    </label>
+
+                    <div class="upload-box">
+
+                        <div class="upload-icon">
+                            📷
+                        </div>
+
+                        <p>
+                            Upload vehicle image
+                        </p>
+
+                        <small>
+                            JPG, PNG or WEBP • Max 5 MB
+                        </small>
+
+                        <input
+                            type="file"
+                            id="vehicleImage"
+                            accept=".jpg,.jpeg,.png,.webp">
+
+                    </div>
+
+                    <div
+                        id="fileName"
+                        class="file-name">
+                    </div>
+
+                </div>
+
+
+                <!-- AVAILABILITY -->
+                <div class="availability-box">
+
+                    <div>
+
+                        <h3>
+                            Vehicle Availability
+                        </h3>
+
+                        <p>
+                            Make this vehicle available
+                            for customers.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="availability"
+                            checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-actions">
+
+                    <a
+                        href="owner-dashboard.html"
+                        class="cancel-btn">
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+                        + Add Vehicle
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="add-vehicle.js"></script>
+
+</body>
+</html>

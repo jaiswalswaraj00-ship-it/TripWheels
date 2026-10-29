@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Vehicles - TRIPWHEELS</title>
+
+    <link rel="stylesheet" href="my-vehicles.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>My Vehicles</h1>
+                <p>Manage your bikes and cars</p>
+            </div>
+
+            <button class="add-btn" onclick="goToAddVehicle()">
+                + Add Vehicle
+            </button>
+
+        </header>
+
+
+        <!-- VEHICLES -->
+
+        <!-- IMPORTANT:
+             There are NO default bike/car cards here.
+             JavaScript will load only saved vehicles.
+        -->
+
+        <main class="vehicles-container" id="vehiclesContainer">
+
+        </main>
+
+    </div>
+
+
+    <script src="my-vehicles.js"></script>
+
+</body>
+</html>

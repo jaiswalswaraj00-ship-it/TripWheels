@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bookings - TRIPWHEELS</title>
+
+    <link rel="stylesheet" href="bookings.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Bookings</h1>
+                <p>Manage your vehicle bookings</p>
+            </div>
+
+            <button class="back-btn" onclick="goDashboard()">
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+        <!-- SUMMARY CARDS -->
+        <section class="summary">
+
+            <div class="summary-card">
+                <div class="summary-icon pending-icon">⏳</div>
+
+                <div>
+                    <h3 id="pendingCount">0</h3>
+                    <p>Pending</p>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon confirmed-icon">✓</div>
+
+                <div>
+                    <h3 id="confirmedCount">0</h3>
+                    <p>Confirmed</p>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon completed-icon">✓</div>
+
+                <div>
+                    <h3 id="completedCount">0</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon total-icon">📅</div>
+
+                <div>
+                    <h3 id="totalCount">0</h3>
+                    <p>Total Bookings</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+        <section class="filter-section">
+
+            <button
+                class="filter-btn active"
+                onclick="filterBookings('all', this)">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterBookings('Pending', this)">
+                Pending
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterBookings('Confirmed', this)">
+                Confirmed
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterBookings('Completed', this)">
+                Completed
+            </button>
+
+        </section>
+
+
+        <!-- BOOKINGS -->
+        <main id="bookingList" class="booking-list">
+
+        </main>
+
+    </div>
+
+
+    <script src="bookings.js"></script>
+
+</body>
+</html>
